@@ -1,5 +1,5 @@
 (function () {
-  var pageWidth = 750; //设计图宽度
+  var pageWidth = 390; //设计图宽度
   var docEl = document.documentElement;
   var windowScale = function () {
     docEl.style.fontSize =

@@ -37,20 +37,20 @@ function fetchList() {
 }
 
 // 页面初始化
-async function initData() {
-  showLoading();
-  const list = await fetchList();
-  hideLoading();
-  console.log(list);
-  const listDom = document.querySelector(".list");
-  let html = "";
-  list.forEach((item) => {
-    html += `<li>${item.name}</li>`;
-  });
-  if (listDom) {
-    listDom.innerHTML = html;
-  }
-}
+// async function initData() {
+//   showLoading();
+//   const list = await fetchList();
+//   hideLoading();
+//   console.log(list);
+//   const listDom = document.querySelector(".list");
+//   let html = "";
+//   list.forEach((item) => {
+//     html += `<li>${item.name}</li>`;
+//   });
+//   if (listDom) {
+//     listDom.innerHTML = html;
+//   }
+// }
 
 initData();
 
