@@ -312,13 +312,11 @@ body {
     }
 
     .box-itemr {
-      // display: none;
-      height: 150rem;
-      padding: 0 12rem;
+      padding: 0 12rem 30rem;
       box-sizing: border-box;
 
-      .item-one {
-        display: flex;
+      .item {
+        display: none;
         justify-content: space-between;
         align-items: center;
         height: 42rem;

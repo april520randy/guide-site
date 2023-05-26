@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --mode dev",
+    "build": "vite build --mode prod",
+    "build:test": "vite build --mode test",
+    "build:prod": "vite build --mode prod",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -13,7 +15,6 @@
     "vite": "^4.3.2"
   },
   "dependencies": {
-    "axios": "^1.4.0",
-    "spin.js": "^4.1.1"
+    "axios": "^1.4.0"
   }
 }

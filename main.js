@@ -1,12 +1,12 @@
 import "./assets/styles/index.scss";
 import "./assets/js/rem.js";
-let BASE_URL = "http://192.168.3.156:9101/";
+let BASE_URL = import.meta.env.VITE_API_URL;
+
 // 获取列表
 function fetchList() {
-  let url = `${BASE_URL}money-pos/bphyh/page?page=1&size=10&sort=string&status=0`;
+  let url = `${BASE_URL}/money-pos/bphyh/page?page=1&size=10&sort=string&status=0`;
   return fetch(url).then((res) => res.json());
 }
-
 
 // 页面初始化
 async function initData() {
@@ -71,35 +71,46 @@ async function initData() {
       banner.src = getImageUrl(commonData.imgphone);
       // 处理banner 跳转
       let btnLink = document.querySelector(".head-title .head-right");
+      btnLink.style.display = 'flex'
       btnLink.onclick = function () {
         window.location.href = commonData.bannerTopLink;
       };
 
       // 底部标题设置
-      let bottomTitlewrapper = document.querySelector("#bottom-title-wrapper");
       let bottomTitle1 = document.querySelector("#bottom-title1");
       let bottomTitle2 = document.querySelector("#bottom-title2");
       let bottomBtn1 = document.querySelector("#bottom-btn1");
       let bottomBtn2 = document.querySelector("#bottom-btn2");
-      if (commonData.otherTitle || commonData.otherContent) {
-        bottomTitlewrapper.style.display = "block";
+      // 标题1
+      if (commonData.otherTitle) {
+        document.querySelector('#item-one').style.display = 'flex'
+        bottomTitle1.innerHTML = commonData.otherTitle.replace(
+          /(\d+%*)/g,
+          '<span  style="color:#FF0000">$&</span>'
+        );
+        bottomBtn1.onclick = function () {
+          window.location.href = commonData.otherBtn;
+        };
       }
-      bottomTitle1.innerHTML = commonData.otherTitle;
-      bottomTitle2.innerHTML = commonData.otherContent;
-      bottomBtn1.onclick = function () {
-        window.location.href = commonData.otherBtn;
-      };
-      bottomBtn2.onclick = function () {
-        window.location.href = commonData.otherBtnLink;
-      };
+      // 标题2
+      if (commonData.otherContent) {
+        document.querySelector('#item-two').style.display = 'flex'
+        bottomTitle2.innerHTML = commonData.otherContent.replace(
+          /(\d+%*)/g,
+          '<span  style="color:#C03BFF">$&</span>'
+        );
+        bottomBtn2.onclick = function () {
+          window.location.href = commonData.otherBtnLink;
+        };
+      }
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
   hideLoading();
 }
 
-// initData();
+initData();
 
 function showLoading() {
   const loadingDom = getLoadingDom();
@@ -132,3 +143,4 @@ function getTypeClassName(type) {
       return "b-sport";
   }
 }
+

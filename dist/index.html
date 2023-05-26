@@ -1,26 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size:1px">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/guide-site/dist/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>测试项目</title>
-  <script type="module" crossorigin src="/guide-site/dist/assets/index-d5323ff3.js"></script>
-  <link rel="stylesheet" href="/guide-site/dist/assets/index-45245c53.css">
+  <title>导航站</title>
+  <style>
+  </style>
+  <script type="module" crossorigin src="/guide-site/dist/assets/index-f4a6a6df.js"></script>
+  <link rel="stylesheet" href="/guide-site/dist/assets/index-b82a5ffb.css">
 </head>
 
 <body>
-  <div id="app"></div>
-  <div class="box"></div>
-  <div class="list">
-    <ul>
-      <!-- <li>item1</li>
-        <li>item2</li>
-        <li>item3</li> -->
-    </ul>
+  <div class="box-content">
+    <!-- 头部 -->
+    <div class="box-img">
+      <div class="head-img-box">
+        <img class="head-img" src="/guide-site/dist/assets/headimg-005311f5.png" alt="">
+      </div>
+      <div class="head-title">
+        <div class="head-left">
+          <div class="head-logo">
+            <img class="logo-img" src="/guide-site/dist/assets/logo-117c4f46.png" alt="">
+          </div>
+          <div class="head-text">
+            <div style="font-size: 15rem;">曼彻斯特足球俱乐部</div>
+            <div>全球官方合作伙伴</div>
+          </div>
+        </div>
+        <div class="head-right">
+          <text>立即体验</text>
+          <img class="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAIL+fgEDv33BQEM+vj2AwO0vtVQAAAINJREFUSMftkrsOgDAIRaFAa33y/18rxsUFk7sZ0zO1wwmPCw0G/2BalBDM3SGjO2qIBx0Q5iWEyojRwigEwDWMCdrse1Omm4is5WaNt9a3pronWCJoJmgabUI6BNvBzI8/W70KgGE3JAcPGCwg4IE3pEADD8PAiWkOYSeEXpQGg69wAqnWCTc0nZq3AAAAAElFTkSuQmCC" alt="" style="width:24rem;height:24rem">
+        </div>
+      </div>
+    </div>
+
+    <div class="mid-content">
+      <!-- 体育下载列表 -->
+      <div class="box-mid" id="sport-list">
+      </div>
+      <!-- AI预测 -->
+      <div class="box-foot">
+        <div class="tipline">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAAAiCAMAAAAkssYyAAAAOVBMVEUAAABre+9qeO9rcP5ocPpscP5wcP9scP5qcP5revBqcPpscP9scP5scP9sd/NrcP1seexqeu9reu+C/estAAAAEnRSTlMAn2DfIIAQz1+AMKvvv5BwUDDuwbWUAAAA+0lEQVRYw93ZCxKDIAwE0GgIVtR+vP9hO4lWCL2Amz1BnsIMLASbtCWKksQLR9EkFnoE0aiFgmjMEkRjliAasyBr8lacBVmTp4VLZ3mDavIkVLg4y7wPkBq1kGqcZYfUmOXQtBZIjVlOTWOB1FQLJV7LzwKpcRYpXA4LpMZbbN84i9cM905nUc3gLE4z3jvPKft/JDx3mBlnoYnXiH5/VEunERt5RLU4Da/HyCOqpdEIT0KHBtVyaYRTvjSollNj+6VqUC2mMUurQbUQyaojO80H1UL0SvWEA35ttlQNeKHRaeJUTaqJUwKqJk49q5o4xblq4jxpEOXlz/IFKcUSA24PBlsAAAAASUVORK5CYII=" alt="" style="width: 102rem;height: 17rem;">
+          <text class="tip-title">Al预测</text>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAAAiCAMAAAAkssYyAAAAOVBMVEUAAABre+9qeO9rcP5oc/VscP9scP1ocP9wdvRqcPpreu9reu9scP5tcP5rcvtscP9scPtreu9scP5uPWtiAAAAEXRSTlMAn2DfIH+AIBAw38/Pj9+/QEPwWacAAAD5SURBVFjD3dXNEoIwEAPgaimUX8X3f1hLxrqhjneyueb0DWwafpJScJMUoxtNit3gRVMsITjRwOJEA4sTDSxONLCQRnmsq6XrGk1a5D7T1zJNpIElq/10Ztl30sCidkJsYc1hURsEtpw0jyWrzVtjMc36WtXGurGYJi1jTFoatrAG9zJoaRqLaVbcC2u227UTQv/B5PmMmUsBTF8x43a/dsI/zZxRsCWO4foxDVtQPNUsrDFLnWY1C2vIgkczdmqWRmOW/ijULKw5WVCoWVhjllqoWUhjllrIWUxTLVboWaBhi3iKxo0FGjcWaNxYoHFjOTR+LEWja3kDfSQRq1cZcD0AAAAASUVORK5CYII=" alt="" style="width: 102rem;height: 17rem;">
+        </div>
+        <div class="tipnote">
+          智能AI大数据分析，花更少的时间获取最新赛事，涵盖各种推荐，最全最劲爆的赛事供您投注：五大联赛，欧冠，世界杯，NBA红单胜率高达90%
+        </div>
+        <div class="tiplist">
+          <div class="list-title">B体育Al(精准大数据)</div>
+          <!-- 赛事列表 -->
+          <div class="table-wrapper">
+            <div class="head">
+              <span>比赛时间</span>
+              <span>比赛队伍</span>
+              <span>AI预测</span>
+              <span>赛果</span>
+            </div>
+            <div class="list-wrapper">
+              <div class="s-list">
+                <div class="item">
+                  <p>05-23 16:35</p>
+                  <p>1AC米兰0-1国际米兰</p>
+                  <p class="result">双方总进球数少于3球</p>
+                  <p class="guess">预测正确</p>
+                </div>
+                <div class="item">
+                  <p>05-23 16:35</p>
+                  <p>2AC米兰0-1国际米兰</p>
+                  <p class="result">双方总进球数少于3球</p>
+                  <p class="guess">预测正确</p>
+                </div>
+                <div class="item">
+                  <p>05-23 16:35</p>
+                  <p>3AC米兰0-1国际米兰</p>
+                  <p class="result">双方总进球数少于3球</p>
+                  <p class="guess">预测正确</p>
+                </div>
+                <div class="item">
+                  <p>05-23 16:35</p>
+                  <p>4AC米兰0-1国际米兰</p>
+                  <p class="result">双方总进球数少于3球</p>
+                  <p class="guess">预测正确</p>
+                </div>
+                <div class="item">
+                  <p>05-23 16:35</p>
+                  <p>5AC米兰0-1国际米兰</p>
+                  <p class="result">双方总进球数少于3球</p>
+                  <p class="guess">预测正确</p>
+                </div>
+                <div class="item">
+                  <p>05-23 16:35</p>
+                  <p>6AC米兰0-1国际米兰</p>
+                  <p class="result">双方总进球数少于3球</p>
+                  <p class="guess">预测正确</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- 底部标题栏 -->
+      <div id="bottom-title-wrapper" class="box-itemr">
+        <div class="item" id="item-one">
+          <div id="bottom-title1"></div>
+          <div id="bottom-btn1" class="item-btn btn-color">立即领取</div>
+        </div>
+        <div class="item" id="item-two">
+          <div id="bottom-title2"></div>
+          <div id="bottom-btn2" class="item-btn btn-color-two">立即领取</div>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <img class="test-img" src="/guide-site/dist/assets/vip-30da41cf.jpg" alt="">
+
+
 
   <!-- loading -->
   <div class="loading-wrapper">
