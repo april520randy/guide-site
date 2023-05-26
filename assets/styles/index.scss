@@ -14,19 +14,18 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+html{
+  font-size:1rem;
+}
 body {
   margin: 0;
+  max-width: 640px;
 }
 
 img {
   max-width: 100%;
 }
 
-#app {
-  max-width: 640px;
-  background: blue;
-}
 
 .box-content {
   .box-img {
@@ -128,7 +127,6 @@ img {
 
         .item-h {
           display: flex;
-
           .item-h-right {
             font-size: 13rem;
 
@@ -188,6 +186,8 @@ img {
             text-align: center;
             border-radius: 5rem;
             border-radius: 15rem;
+            color:#fff;
+            text-decoration: none;
           }
         }
       }
