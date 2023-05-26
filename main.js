@@ -51,10 +51,10 @@ async function initData() {
             </div>
           </div>
           <div class="item-bot">
-            <a href="${item.bbannerBtnLink}" class="bot-btn">${
+            <a href="${prefixUrl(item.bbannerBtnLink)}" class="bot-btn">${
           item.bbannerBtn
         }</a>
-            <a href="${item.bbannerBtn2Link}" class="bot-btn">${
+            <a href="${prefixUrl(item.bbannerBtn2Link)}" class="bot-btn">${
           item.bbannerBtn2
         }</a>
           </div>
@@ -71,9 +71,9 @@ async function initData() {
       banner.src = getImageUrl(commonData.imgphone);
       // 处理banner 跳转
       let btnLink = document.querySelector(".head-title .head-right");
-      btnLink.style.display = 'flex'
+      btnLink.style.display = "flex";
       btnLink.onclick = function () {
-        window.location.href = commonData.bannerTopLink;
+        window.location.href = prefixUrl(commonData.bannerTopLink);
       };
 
       // 底部标题设置
@@ -83,24 +83,24 @@ async function initData() {
       let bottomBtn2 = document.querySelector("#bottom-btn2");
       // 标题1
       if (commonData.otherTitle) {
-        document.querySelector('#item-one').style.display = 'flex'
+        document.querySelector("#item-one").style.display = "flex";
         bottomTitle1.innerHTML = commonData.otherTitle.replace(
           /(\d+%*)/g,
           '<span  style="color:#FF0000">$&</span>'
         );
         bottomBtn1.onclick = function () {
-          window.location.href = commonData.otherBtn;
+          window.location.href = prefixUrl(commonData.otherBtn);
         };
       }
       // 标题2
       if (commonData.otherContent) {
-        document.querySelector('#item-two').style.display = 'flex'
+        document.querySelector("#item-two").style.display = "flex";
         bottomTitle2.innerHTML = commonData.otherContent.replace(
           /(\d+%*)/g,
           '<span  style="color:#C03BFF">$&</span>'
         );
         bottomBtn2.onclick = function () {
-          window.location.href = commonData.otherBtnLink;
+          window.location.href = prefixUrl(commonData.otherBtnLink);
         };
       }
     }
@@ -144,3 +144,9 @@ function getTypeClassName(type) {
   }
 }
 
+function prefixUrl(url) {
+  if (!url.includes("http")) {
+    url = "https://" + url;
+  }
+  return;
+}

@@ -22,6 +22,8 @@
 body {
   margin: 0 auto;
   max-width: 640px;
+  color: #213547;
+  font-size:14rem;
 }
 
 // img {
@@ -36,7 +38,6 @@ body {
   background-size: 100%;
 
   .box-img {
-    // width: 390rem;
     height: 247rem;
     background: url("../img/headbg.png") no-repeat center top;
     background-attachment: fixed;
@@ -95,6 +96,7 @@ body {
         border: 1rem solid #fff;
         border-radius: 6rem;
         padding-left: 16rem;
+        font-size:13rem;
       }
     }
   }
@@ -364,20 +366,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
 
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-}
 @keyframes scrollAnimation {
   0% {
     transform: translate3d(0, 0, 0);
