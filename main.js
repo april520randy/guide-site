@@ -4,7 +4,7 @@ let BASE_URL = import.meta.env.VITE_API_URL;
 
 // 获取列表
 function fetchList() {
-  let url = `${BASE_URL}/money-pos/bphyh/page?page=1&size=10&sort=string&status=0`;
+  let url = `${BASE_URL}/bphyh/page?page=1&size=10&sort=string&status=0`;
   return fetch(url).then((res) => res.json());
 }
 
@@ -14,12 +14,14 @@ async function initData() {
   try {
     const res = await fetchList();
     if (res.code === 200) {
-      let list = res.data.records;
+      let list = res.data.data.records;
       let newList = list.map((item) => {
         item = item.gmsPhyB[0];
         item.logo = getImageUrl(item.logo);
         return item;
       });
+      newList = newList.filter((item) => item.status); // 可见
+      newList.sort((a, b) => a.sort - b.sort); // 排序
       console.log(newList);
       const listDom = document.querySelector("#sport-list");
       let html = "";
@@ -45,18 +47,16 @@ async function initData() {
               <div class="main-gif">新人注册即&nbsp;<text>送${
                 item.registerHandsel
               }元</text></div>
-              <div class="main-mes">流水+包赔&nbsp;<text>累计可拿${
-                item.otherHandsel
-              }元</text></div>
+              ${secondSection(item)}
             </div>
           </div>
           <div class="item-bot">
-            <a href="${prefixUrl(item.bbannerBtnLink)}" class="bot-btn">${
-          item.bbannerBtn
-        }</a>
-            <a href="${prefixUrl(item.bbannerBtn2Link)}" class="bot-btn">${
-          item.bbannerBtn2
-        }</a>
+            <a  href="javascript:;" class="register bot-btn ${
+              item.type === "2" ? "black" : ""
+            }">立即注册</a>
+            <a href="javascript:;" class="download bot-btn ${
+              item.type === "2" ? "black" : ""
+            }">APP下载</a>
           </div>
         </div>
       `;
@@ -66,15 +66,17 @@ async function initData() {
       }
 
       // 处理banner
-      const commonData = res.data.records[0];
+      const commonData = res.data.data.records[0];
       let banner = document.querySelector(".head-img-box img");
       banner.src = getImageUrl(commonData.imgphone);
       // 处理banner 跳转
       let btnLink = document.querySelector(".head-title .head-right");
       btnLink.style.display = "flex";
-      btnLink.onclick = function () {
+      banner.onclick = goBannerLink;
+      btnLink.onclick = goBannerLink;
+      function goBannerLink() {
         window.location.href = prefixUrl(commonData.bannerTopLink);
-      };
+      }
 
       // 底部标题设置
       let bottomTitle1 = document.querySelector("#bottom-title1");
@@ -103,14 +105,45 @@ async function initData() {
           window.location.href = prefixUrl(commonData.otherBtnLink);
         };
       }
+
+      // 统计注册
+      let registerItems = document.querySelectorAll(".box-item .register");
+      registerItems.forEach((dom, idx) => {
+        dom.onclick = function () {
+          const dataItem = newList[idx];
+          statistics("register", dataItem); // 统计
+          window.location.href = prefixUrl(dataItem.bbannerBtn); // 跳转注册
+        };
+      });
+      // 统计下载
+      let downloadItems = document.querySelectorAll(".box-item .download");
+      downloadItems.forEach((dom, idx) => {
+        dom.onclick = function () {
+          const dataItem = newList[idx];
+          statistics("download", dataItem); // 统计
+          window.location.href = prefixUrl(getDownloadUrl(dataItem)); // app下载
+        };
+      });
     }
   } catch (err) {
-    // console.log(err);
+    console.log(err);
   }
   hideLoading();
 }
 
+// 初始化数据
 initData();
+statistics("init");
+// 统计数据
+function statistics(action_type, sdata) {
+  const reqData = {
+    action_type,
+  };
+  if (sdata) {
+    reqData.id = sdata.bbannerId;
+  }
+  console.log(reqData);
+}
 
 function showLoading() {
   const loadingDom = getLoadingDom();
@@ -127,7 +160,7 @@ function getLoadingDom() {
 }
 
 function getImageUrl(src) {
-  return BASE_URL + "/money-pos/assets/" + src;
+  return BASE_URL + "/assets/" + src;
 }
 function getTypeClassName(type) {
   switch (Number(type)) {
@@ -144,9 +177,40 @@ function getTypeClassName(type) {
   }
 }
 
+function secondSection(item) {
+  let isBSport = item.type !== "1";
+  if (isBSport) {
+    return `<div class="main-mes">流水+包赔&nbsp;<text>累计可拿${item.otherHandsel}元</text></div>`;
+  } else {
+    return `<div class="main-mes" style="font-size:13rem">每周<text>任领${item.otherHandsel}元</text></div>`;
+  }
+}
+
 function prefixUrl(url) {
+  if (!url) return "";
   if (!url.includes("http")) {
     url = "https://" + url;
   }
-  return;
+  return url;
+}
+
+function getMobilePlatform() {
+  if (navigator.userAgent.match(/Android/i)) return "Android";
+  if (
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i)
+  )
+    return "IOS";
+  if (navigator.userAgent.match(/Windows Phone/i)) return "Windows Phone";
+  return "other";
+}
+
+function getDownloadUrl({ bbannerBtnLink, bbannerBtn2Link }) {
+  let platform = getMobilePlatform();
+  if (platform === "IOS") {
+    return bbannerBtnLink;
+  } else {
+    return bbannerBtn2Link;
+  }
 }

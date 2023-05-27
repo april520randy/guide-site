@@ -21,7 +21,7 @@
 
 body {
   margin: 0 auto;
-  max-width: 640px;
+  // max-width: 640px;
   color: #213547;
   font-size:14rem;
 }
@@ -32,8 +32,8 @@ body {
 
 .box-content {
   min-height: 100vh;
-  max-height: 100vh;
-  overflow: auto;
+  // max-height: 100vh;
+  // overflow: auto;
   background: #e1f1fc url("../img/footbgone.png") no-repeat center bottom;
   background-size: 100%;
 
@@ -88,7 +88,7 @@ body {
       }
 
       .head-right {
-        width: 88rem;
+        width: 94rem;
         height: 30rem;
         line-height: 30rem;
         display: flex;
@@ -131,11 +131,14 @@ body {
               .main-star {
                 display: flex;
                 align-items: center;
+                text{
+                  font-weight:600;
+                }
               }
             }
 
             .main-gif {
-              font-weight: 500;
+              font-weight: 600;
               font-family: "PingFang SC";
 
               text {
@@ -144,6 +147,7 @@ body {
             }
 
             .main-mes {
+              font-weight: 600;
               text {
                 color: #c03bff;
               }
@@ -167,6 +171,9 @@ body {
             border-radius: 15rem;
             color: #fff;
             text-decoration: none;
+            &.black{
+              color:#000;
+            }
           }
         }
         // 公共样式
@@ -278,24 +285,25 @@ body {
               padding: 0 5rem;
               font-weight: 600;
               line-height: 24px;
+              font-size:12rem;
             }
           }
           .list-wrapper {
             height: 220px;
             overflow: hidden;
             .s-list {
-              animation: scrollAnimation 6.5s linear infinite;
-
+              animation: scrollAnimation 20s linear infinite;
               .item {
                 display: flex;
-                height: 55px;
+                // height: 55px;
                 p {
                   flex: 1;
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  padding: 2rem 5rem;
+                  padding: 2rem 4rem;
                   margin: 0;
+                  font-size:12rem;
                   &.result {
                     background: #6a70fe;
                     border-radius: 10rem;
@@ -372,7 +380,7 @@ body {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    // 首屏展示4个item 总共6个item diff = 6-4
-    transform: translate3d(0, calc(2 * -55px), 0);
+    // 首屏展示4个item 总共6个item diff = (16-5)*40px 
+    transform: translate3d(0, 10 * -50px, 0);
   }
 }

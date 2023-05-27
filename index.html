@@ -1,153 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>导航站</title>
-  <style>
-  </style>
-</head>
-
-<body>
-  <div class="box-content">
-    <!-- 头部 -->
-    <div class="box-img">
-      <div class="head-img-box">
-        <img class="head-img" src="./assets/img/headimg.png" alt="">
-      </div>
-      <div class="head-title">
-        <div class="head-left">
-          <div class="head-logo">
-            <img class="logo-img" src="./assets/img/logo.png" alt="">
-          </div>
-          <div class="head-text">
-            <div style="font-size: 15rem;">曼彻斯特足球俱乐部</div>
-            <div>全球官方合作伙伴</div>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>导航站</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="box-content">
+      <!-- 头部 -->
+      <div class="box-img">
+        <div class="head-img-box">
+          <img class="head-img" src="./assets/img/headimg.png" alt="" />
         </div>
-        <div class="head-right">
-          <text>立即体验</text>
-          <img class="" src="./assets/img/Layer_2@2x.png" alt="" style="width:24rem;height:24rem">
-        </div>
-      </div>
-    </div>
-
-    <div class="mid-content">
-      <!-- 体育下载列表 -->
-      <div class="box-mid" id="sport-list">
-      </div>
-      <!-- AI预测 -->
-      <div class="box-foot">
-        <div class="tipline">
-          <img src="./assets/img/Group 6@2x.png" alt="" style="width: 102rem;height: 17rem;">
-          <text class="tip-title">Al预测</text>
-          <img src="./assets/img/GroupR@2x.png" alt="" style="width: 102rem;height: 17rem;">
-        </div>
-        <div class="tipnote">
-          智能AI大数据分析，花更少的时间获取最新赛事，涵盖各种推荐，最全最劲爆的赛事供您投注：五大联赛，欧冠，世界杯，NBA红单胜率高达90%
-        </div>
-        <div class="tiplist">
-          <div class="list-title">B体育Al(精准大数据)</div>
-          <!-- 赛事列表 -->
-          <div class="table-wrapper">
-            <div class="head">
-              <span>比赛时间</span>
-              <span>比赛队伍</span>
-              <span>AI预测</span>
-              <span>赛果</span>
+        <div class="head-title">
+          <div class="head-left">
+            <div class="head-logo">
+              <img class="logo-img" src="./assets/img/logo.png" alt="" />
             </div>
-            <div class="list-wrapper">
-              <div class="s-list">
-                <div class="item">
-                  <p>05-23 16:35</p>
-                  <p>1AC米兰0-1国际米兰</p>
-                  <p class="result">双方总进球数少于3球</p>
-                  <p class="guess">预测正确</p>
-                </div>
-                <div class="item">
-                  <p>05-23 16:35</p>
-                  <p>2AC米兰0-1国际米兰</p>
-                  <p class="result">双方总进球数少于3球</p>
-                  <p class="guess">预测正确</p>
-                </div>
-                <div class="item">
-                  <p>05-23 16:35</p>
-                  <p>3AC米兰0-1国际米兰</p>
-                  <p class="result">双方总进球数少于3球</p>
-                  <p class="guess">预测正确</p>
-                </div>
-                <div class="item">
-                  <p>05-23 16:35</p>
-                  <p>4AC米兰0-1国际米兰</p>
-                  <p class="result">双方总进球数少于3球</p>
-                  <p class="guess">预测正确</p>
-                </div>
-                <div class="item">
-                  <p>05-23 16:35</p>
-                  <p>5AC米兰0-1国际米兰</p>
-                  <p class="result">双方总进球数少于3球</p>
-                  <p class="guess">预测正确</p>
-                </div>
-                <div class="item">
-                  <p>05-23 16:35</p>
-                  <p>6AC米兰0-1国际米兰</p>
-                  <p class="result">双方总进球数少于3球</p>
-                  <p class="guess">预测正确</p>
+            <div class="head-text">
+              <div style="font-size: 15rem">曼彻斯特足球俱乐部</div>
+              <div>全球官方合作伙伴</div>
+            </div>
+          </div>
+          <div class="head-right">
+            <text>立即体验</text>
+            <img
+              class=""
+              src="./assets/img/Layer_2@2x.png"
+              alt=""
+              style="width: 24rem; height: 24rem"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="mid-content">
+        <!-- 体育下载列表 -->
+        <div class="box-mid" id="sport-list"></div>
+        <!-- AI预测 -->
+        <div class="box-foot">
+          <div class="tipline">
+            <img
+              src="./assets/img/Group 6@2x.png"
+              alt=""
+              style="width: 102rem; height: 17rem"
+            />
+            <text class="tip-title">Al预测</text>
+            <img
+              src="./assets/img/GroupR@2x.png"
+              alt=""
+              style="width: 102rem; height: 17rem"
+            />
+          </div>
+          <div class="tipnote">
+            智能AI大数据分析，花更少的时间获取最新赛事，涵盖各种推荐，最全最劲爆的赛事供您投注：五大联赛，欧冠，世界杯，NBA红单胜率高达90%
+          </div>
+          <div class="tiplist">
+            <div class="list-title">B体育Al(精准大数据)</div>
+            <!-- 赛事列表 -->
+            <div class="table-wrapper">
+              <div class="head">
+                <span>比赛时间</span>
+                <span>比赛队伍</span>
+                <span>AI预测</span>
+                <span>赛果</span>
+              </div>
+              <div class="list-wrapper">
+                <div class="s-list">
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>AC米兰0-1国际米兰</p>
+                    <p class="result">双方总进球数少于3球</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>皇家马德里 0-1 巴萨罗那</p>
+                    <p class="result">巴萨罗那不败</p>
+                    <p class="guess"></p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>多特蒙德 0-1 毕尔巴鄂</p>
+                    <p class="result">多特蒙德净胜1球以上</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>水晶宫 0-1 热刺</p>
+                    <p class="result">热刺独赢</p>
+                    <p class="guess"></p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>阿森纳 0-1 曼联</p>
+                    <p class="result">曼联不败</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>尤文图斯 0-1 多特蒙德</p>
+                    <p class="result">尤文图斯不败</p>
+                    <p class="guess"></p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>西班牙人 0-1 巴萨罗那</p>
+                    <p class="result">西班牙人不败</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>拜仁 0-1 皇家马德里</p>
+                    <p class="result">双方总进球大于3球</p>
+                    <p class="guess"></p>
+                  </div>
+
+                  <!-- 重复 -->
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>AC米兰0-1国际米兰</p>
+                    <p class="result">双方总进球数少于3球</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>皇家马德里 0-1 巴萨罗那</p>
+                    <p class="result">巴萨罗那不败</p>
+                    <p class="guess"></p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>多特蒙德 0-1 毕尔巴鄂</p>
+                    <p class="result">多特蒙德净胜1球以上</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>水晶宫 0-1 热刺</p>
+                    <p class="result">热刺独赢</p>
+                    <p class="guess"></p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>阿森纳 0-1 曼联</p>
+                    <p class="result">曼联不败</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>尤文图斯 0-1 多特蒙德</p>
+                    <p class="result">尤文图斯不败</p>
+                    <p class="guess"></p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>西班牙人 0-1 巴萨罗那</p>
+                    <p class="result">西班牙人不败</p>
+                    <p class="guess">预测正确</p>
+                  </div>
+                  <div class="item">
+                    <p>05-23 16:35</p>
+                    <p>拜仁 0-1 皇家马德里</p>
+                    <p class="result">双方总进球大于3球</p>
+                    <p class="guess"></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-      </div>
-      <!-- 底部标题栏 -->
-      <div id="bottom-title-wrapper" class="box-itemr">
-        <div class="item" id="item-one">
-          <div id="bottom-title1"></div>
-          <div id="bottom-btn1" class="item-btn btn-color">立即领取</div>
+        <!-- 底部标题栏 -->
+        <div id="bottom-title-wrapper" class="box-itemr">
+          <div class="item" id="item-one">
+            <div id="bottom-title1"></div>
+            <div id="bottom-btn1" class="item-btn btn-color">立即领取</div>
+          </div>
+          <div class="item" id="item-two">
+            <div id="bottom-title2"></div>
+            <div id="bottom-btn2" class="item-btn btn-color-two">立即领取</div>
+          </div>
         </div>
-        <div class="item" id="item-two">
-          <div id="bottom-title2"></div>
-          <div id="bottom-btn2" class="item-btn btn-color-two">立即领取</div>
-        </div>
       </div>
-
     </div>
-  </div>
 
-
-
-  <!-- loading -->
-  <div class="loading-wrapper">
-    <!-- <div class="load_11">
+    <!-- loading -->
+    <div class="loading-wrapper">
+      <!-- <div class="load_11">
       <div class="rect1"></div>
       <div class="rect2"></div>
       <div class="rect3"></div>
       <div class="rect4"></div>
       <div class="rect5"></div>
     </div> -->
-    <div class="loader-inner">
-      <div class="loader-line-wrap">
-        <div class="loader-line"></div>
-      </div>
-      <div class="loader-line-wrap">
-        <div class="loader-line"></div>
-      </div>
-      <div class="loader-line-wrap">
-        <div class="loader-line"></div>
-      </div>
-      <div class="loader-line-wrap">
-        <div class="loader-line"></div>
-      </div>
-      <div class="loader-line-wrap">
-        <div class="loader-line"></div>
+      <div class="loader-inner">
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script type="module" src="/main.js"></script>
-</body>
-
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
