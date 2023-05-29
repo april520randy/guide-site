@@ -1,0 +1,129 @@
+{
+  "code": 200,
+  "message": "操作成功",
+  "data": {
+    "status": 200,
+    "msg": "操作成功",
+    "data": {
+      "current": 1,
+      "size": 10,
+      "pages": 1,
+      "total": 1,
+      "records": [
+        {
+          "imgPhone": "tenant/1685155992805.png",
+          "phyStatus": 1,
+          "bannerTopLink": "www.youtube.com",
+          "gmsPhyB": [
+            {
+              "bid": "1661993864026402818",
+              "logo": "tenant/1685086191911.png",
+              "registerHandsel": "11",
+              "otherHandsel": "232",
+              "sort": "5",
+              "bbannerBtn2Link": "youtube.com",
+              "bbannerContent": "K体育首次注册赢大奖",
+              "bbannerBtnLink": "baidu.com",
+              "bbannerBtnCount": 1,
+              "bbannerBtn2Count": 1,
+              "btype": "4",
+              "bbannerBtn2": "youtube.com",
+              "bbannerTitle": "K体育",
+              "bbannerBtn": "google.com",
+              "bbannerId": "1e0197ca",
+              "bstatus": 1
+            }
+          ],
+          "otherContent": "转移送豪礼，最高10%转移彩金",
+          "otherTitle": "新用户注册免费送88元彩金",
+          "otherBtn": "youtube.com",
+          "otherBtnLink": "baidu.com"
+        },
+        {
+          "imgPhone": "tenant/1685155992805.png",
+          "phyStatus": 1,
+          "bannerTopLink": "www.youtube.com",
+          "gmsPhyB": [
+            {
+              "bid": "1662012984210042881",
+              "logo": "tenant/1685089748793.png",
+              "registerHandsel": "88",
+              "otherHandsel": "18888",
+              "sort": "2",
+              "bbannerBtn2Link": "http://www.youtube.com",
+              "bbannerBtnLink": "youtube.com",
+              "bbannerBtnCount": 4,
+              "bbannerBtn2Count": 1,
+              "btype": "1",
+              "bbannerBtn2": "google.com",
+              "bbannerTitle": "B体育",
+              "bbannerBtn": "baidu.com",
+              "bbannerId": "1e0197ca",
+              "bstatus": 1
+            }
+          ],
+          "otherContent": "转移送豪礼，最高10%转移彩金",
+          "otherTitle": "新用户注册免费送88元彩金",
+          "otherBtn": "youtube.com",
+          "otherBtnLink": "baidu.com"
+        },
+        {
+          "imgPhone": "tenant/1685155992805.png",
+          "phyStatus": 1,
+          "bannerTopLink": "www.youtube.com",
+          "gmsPhyB": [
+            {
+              "bid": "1662023397035298817",
+              "logo": "tenant/1685092231397.png",
+              "registerHandsel": "213",
+              "otherHandsel": "12312",
+              "sort": "3",
+              "bbannerBtn2Link": "http://www.baidu.com",
+              "bbannerBtnLink": "youtube.com",
+              "bbannerBtnCount": 1,
+              "bbannerBtn2Count": 1,
+              "btype": "2",
+              "bbannerBtn2": "google.com",
+              "bbannerTitle": "米乐M6",
+              "bbannerBtn": "google.com",
+              "bbannerId": "1e0197ca",
+              "bstatus": 1
+            }
+          ],
+          "otherContent": "转移送豪礼，最高10%转移彩金",
+          "otherTitle": "新用户注册免费送88元彩金",
+          "otherBtn": "youtube.com",
+          "otherBtnLink": "baidu.com"
+        },
+        {
+          "imgPhone": "tenant/1685155992805.png",
+          "phyStatus": 1,
+          "bannerTopLink": "www.youtube.com",
+          "gmsPhyB": [
+            {
+              "bid": "1662036367085731841",
+              "logo": "tenant/1685095323704.png",
+              "registerHandsel": "1000",
+              "otherHandsel": "234",
+              "sort": "4",
+              "bbannerBtn2Link": "http://www.baidu.com",
+              "bbannerBtnLink": "youtube.com",
+              "bbannerBtnCount": 1,
+              "bbannerBtn2Count": 1,
+              "btype": "3",
+              "bbannerBtn2": "google.com",
+              "bbannerTitle": "BB体育",
+              "bbannerBtn": "baidu.com",
+              "bbannerId": "1e0197ca",
+              "bstatus": 1
+            }
+          ],
+          "otherContent": "转移送豪礼，最高10%转移彩金",
+          "otherTitle": "新用户注册免费送88元彩金",
+          "otherBtn": "youtube.com",
+          "otherBtnLink": "baidu.com"
+        }
+      ]
+    }
+  }
+}
