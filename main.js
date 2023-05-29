@@ -111,8 +111,8 @@ async function initData() {
       registerItems.forEach((dom, idx) => {
         dom.onclick = function () {
           const dataItem = newList[idx];
-          statistics("注册", dataItem); // 统计
-          // window.location.href = prefixUrl(dataItem.bbannerBtn); // 跳转注册
+          // statistics("注册", dataItem); // 统计
+          window.location.href = prefixUrl(dataItem.bbannerBtn); // 跳转注册
         };
       });
       // 统计下载
@@ -120,7 +120,7 @@ async function initData() {
       downloadItems.forEach((dom, idx) => {
         dom.onclick = function () {
           const dataItem = newList[idx];
-          statistics("下载", dataItem); // 统计
+          // statistics("下载", dataItem); // 统计
           window.location.href = prefixUrl(getDownloadUrl(dataItem)); // app下载
         };
       });
@@ -133,7 +133,7 @@ async function initData() {
 
 // 初始化数据
 initData();
-statistics("页面首次载入");
+// statistics("页面首次载入");
 // 统计数据
 function statistics(btn, sdata) {
   const reqData = {
