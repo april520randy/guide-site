@@ -4,7 +4,7 @@ let BASE_URL = import.meta.env.VITE_API_URL;
 
 // 获取列表
 function fetchList() {
-  let url = `${BASE_URL}/bphyh/page?page=1&size=10&sort=string&status=0`;
+  let url = `${BASE_URL}/bphyh/page?page=1&size=10&sort=string`;
   return fetch(url).then((res) => res.json());
 }
 
@@ -68,7 +68,7 @@ async function initData() {
       // 处理banner
       const commonData = res.data.data.records[0];
       let banner = document.querySelector(".head-img-box img");
-      banner.src = getImageUrl(commonData.imgphone);
+      banner.src = getImageUrl(commonData.imgPhone);
       // 处理banner 跳转
       let btnLink = document.querySelector(".head-title .head-right");
       btnLink.style.display = "flex";
@@ -111,7 +111,7 @@ async function initData() {
       registerItems.forEach((dom, idx) => {
         dom.onclick = function () {
           const dataItem = newList[idx];
-          // statistics("注册", dataItem); // 统计
+          // statistics(dataItem); // 统计
           window.location.href = prefixUrl(dataItem.bbannerBtn); // 跳转注册
         };
       });
@@ -120,7 +120,7 @@ async function initData() {
       downloadItems.forEach((dom, idx) => {
         dom.onclick = function () {
           const dataItem = newList[idx];
-          // statistics("下载", dataItem); // 统计
+          // statistics(dataItem); // 统计
           window.location.href = prefixUrl(getDownloadUrl(dataItem)); // app下载
         };
       });
@@ -135,19 +135,16 @@ async function initData() {
 initData();
 // statistics("页面首次载入");
 // 统计数据
-function statistics(btn, sdata) {
-  const reqData = {
-    bbannerBtn: btn,
-  };
+function statistics(sdata) {
   if (sdata) {
     reqData.id = sdata.bbannerId;
-    console.log(reqData)
+    console.log(reqData);
     fetch(`${BASE_URL}/bphy/updateCount`, {
-      method: "PUT",
+      method: "post",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(reqData),
+      body: JSON.stringify(sdata),
     })
       .then((response) => {
         // 处理响应
