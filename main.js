@@ -27,7 +27,7 @@ async function initData() {
       let html = "";
       newList.forEach((item) => {
         html += `
-      <div class="box-item ${getTypeClassName(item.type)}">
+      <div class="box-item ${getTypeClassName(item.btype)}">
           <div class="item-h">
             <div><img class="" src="${item.logo}" alt=""
                 style="width:64rem;height:62rem;margin-right: 13rem;"></div>
@@ -52,10 +52,10 @@ async function initData() {
           </div>
           <div class="item-bot">
             <a  href="javascript:;" class="register bot-btn ${
-              item.type === "2" ? "black" : ""
+              item.btype === "2" ? "black" : ""
             }">立即注册</a>
             <a href="javascript:;" class="download bot-btn ${
-              item.type === "2" ? "black" : ""
+              item.btype === "2" ? "black" : ""
             }">APP下载</a>
           </div>
         </div>
@@ -190,7 +190,7 @@ function getTypeClassName(type) {
 }
 
 function secondSection(item) {
-  let isBSport = item.type !== "1";
+  let isBSport = item.btype !== "1";
   if (isBSport) {
     return `<div class="main-mes">流水+包赔&nbsp;<text>累计可拿${item.otherHandsel}元</text></div>`;
   } else {
