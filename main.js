@@ -20,7 +20,7 @@ async function initData() {
         item.logo = getImageUrl(item.logo);
         return item;
       });
-      newList = newList.filter((item) => item.status); // 可见
+      newList = newList.filter((item) => item.bstatus); // 可见
       newList.sort((a, b) => a.sort - b.sort); // 排序
       console.log(newList);
       const listDom = document.querySelector("#sport-list");
@@ -111,8 +111,8 @@ async function initData() {
       registerItems.forEach((dom, idx) => {
         dom.onclick = function () {
           const dataItem = newList[idx];
-          statistics("register", dataItem); // 统计
-          window.location.href = prefixUrl(dataItem.bbannerBtn); // 跳转注册
+          statistics("注册", dataItem); // 统计
+          // window.location.href = prefixUrl(dataItem.bbannerBtn); // 跳转注册
         };
       });
       // 统计下载
@@ -120,7 +120,7 @@ async function initData() {
       downloadItems.forEach((dom, idx) => {
         dom.onclick = function () {
           const dataItem = newList[idx];
-          statistics("download", dataItem); // 统计
+          statistics("下载", dataItem); // 统计
           window.location.href = prefixUrl(getDownloadUrl(dataItem)); // app下载
         };
       });
@@ -133,15 +133,30 @@ async function initData() {
 
 // 初始化数据
 initData();
-statistics("init");
+statistics("页面首次载入");
 // 统计数据
-function statistics(action_type, sdata) {
+function statistics(btn, sdata) {
   const reqData = {
-    action_type,
+    bbannerBtn: btn,
   };
   if (sdata) {
     reqData.id = sdata.bbannerId;
+    console.log(reqData)
+    fetch(`${BASE_URL}/bphy/updateCount`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reqData),
+    })
+      .then((response) => {
+        // 处理响应
+      })
+      .catch((error) => {
+        // 处理错误
+      });
   }
+
   console.log(reqData);
 }
 
